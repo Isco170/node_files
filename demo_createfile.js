@@ -8,7 +8,13 @@ var fs = require('fs')
 // });
 
 // open()
-fs.open('mynewfile2.txt', 'w', function(err, file){
-    if(err) throw err;
+// fs.open('mynewfile2.txt', 'w', function(err, file){
+//     if(err) throw err;
+//     console.log('Saved!');
+// });
+
+// writeFile()
+fs.writeFile('mynewfile3.txt', 'Hello content 3!', function(err){
+    if (err) throw err;
     console.log('Saved!');
 });
