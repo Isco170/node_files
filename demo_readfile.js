@@ -10,8 +10,10 @@ var readline = require('readline')
 //     });
 // }).listen(8080);
 
+
+// Read line by line
 var myInterface = readline.createInterface({
-    input: fs.createReadStream('mynewfile3.txt')
+    input: fs.createReadStream('demofile.html')
 });
 
 var lineno = 0;
