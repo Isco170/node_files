@@ -1,5 +1,6 @@
 // var http = require('http');
 var fs = require('fs')
+var readline = require('readline')
 
 // http.createServer(function(req, res){
 //     fs.readFile('demofile.html', function(err, data){
@@ -9,6 +10,13 @@ var fs = require('fs')
 //     });
 // }).listen(8080);
 
-fs.readFile('mynewfile3.txt', function(err, data){
-    console.log(data)
-})
+var myInterface = readline.createInterface({
+    input: fs.createReadStream('mynewfile3.txt')
+});
+
+var lineno = 0;
+
+myInterface.on('line', function(line){
+    lineno++;
+    console.log('Line number '+ lineno + ': ' + line);
+});
