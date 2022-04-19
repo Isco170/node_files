@@ -1,6 +1,11 @@
+var http = require('http');
 var fs = require('fs')
 
-fs.appendFile('mynewfile', 'Hello content', function(err) {
-    if (err) throw err;
-    console.log('Daved');
-});
+
+
+http.createServer(function (req, res) {
+    fs.appendFile('mynewfile.txt', 'Hello content!', function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+    });
+}).listen(8080);
